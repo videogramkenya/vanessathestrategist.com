@@ -1,0 +1,6 @@
+# Nothing here is built, so there is little to ignore. These are the usual strays.
+.DS_Store
+Thumbs.db
+.tmp/
+node_modules/
+*.log
