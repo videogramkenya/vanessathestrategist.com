@@ -1,0 +1,81 @@
+{
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/real-estate",
+      "destination": "/build-and-transfer",
+      "permanent": true
+    },
+    {
+      "source": "/real-estate/",
+      "destination": "/build-and-transfer",
+      "permanent": true
+    },
+    {
+      "source": "/trainings-corporate-workshops",
+      "destination": "/acquire-and-close",
+      "permanent": true
+    },
+    {
+      "source": "/trainings-corporate-workshops/",
+      "destination": "/acquire-and-close",
+      "permanent": true
+    },
+    {
+      "source": "/masterclasses",
+      "destination": "/strategy-day",
+      "permanent": true
+    },
+    {
+      "source": "/masterclasses/",
+      "destination": "/strategy-day",
+      "permanent": true
+    },
+    {
+      "source": "/work-with-me",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/work-with-me/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/clients",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/clients/",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/testimonials",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/testimonials/",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/appointment-type-01",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/appointment-type-01/",
+      "destination": "/",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/:page(build-and-transfer|acquire-and-close|strategy-day|about)",
+      "destination": "/index.html"
+    }
+  ]
+}
