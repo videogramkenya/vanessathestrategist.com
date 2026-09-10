@@ -1,15 +1,21 @@
-# Vanessa The Strategist — website
+# Vanessa The Strategist, website
 
-One self-contained HTML file. Five pages behind a `#/route` hash router: home,
-Build & Transfer, Acquire & Close, Strategy Day, About. Fonts and photographs are
-embedded, so the file works offline and can be hosted anywhere that serves a file.
+One self-contained HTML file. Five pages at clean addresses: `/`, `/build-and-transfer`,
+`/acquire-and-close`, `/strategy-day` and `/about`. Fonts and photographs are embedded,
+so the file works offline and can be hosted anywhere that serves a file.
 
-- `index.html` — the site. This is the one to publish.
-- `original_site2_2.html` — exactly what Alex handed over on 3 Sep 2026, untouched,
-  so any change can be diffed against it.
+- `index.html`: the site. This is the one to publish.
+- `vercel.json`: serves the page at each clean address, and permanently redirects the
+  old WordPress pages to their nearest new page.
+- `favicon.ico`, `favicon-32x32.png`, `apple-touch-icon.png`, `icon-192.png`: the icons.
+- `reference/original-handover-2026-09-03.html`: exactly what Alex handed over on
+  3 Sep 2026, untouched, so any change can be diffed against it.
 
 Preview it with the `vanessa-site` entry in `.claude/launch.json`, which serves this
-folder on port 8791. Opening the file directly with `file://` is not a fair test.
+folder on port 8791. That is a plain file server, so it does not know the clean
+addresses: open `/` and use the menu, or open an old style `/#/build-and-transfer`
+link, which the page converts. Opening the file directly with `file://` is not a fair
+test.
 
 ## Mobile pass, 3 September 2026
 
@@ -80,3 +86,31 @@ Her logo says **the social media strategist**. The site says **the strategist**,
 its whole argument is that she is a Revenue Architect who does far more than social.
 The About page makes a point of it. So her logo and her positioning now disagree, and
 that is her decision rather than a thing to quietly fix in code.
+
+## Favicon, clean addresses and the real domain, 10 September 2026
+
+**The site is live at https://www.vanessathestrategist.com.** The bare domain redirects
+to www. DNS is managed in Vanessa's Namecheap account; her email still lives on the old
+host's server until it is moved separately. Full record list and the order of the move
+are kept outside this repo, in Alex's project notes.
+
+**Favicon.** There was none: nothing linked and `/favicon.ico` returned 404. Cropped from
+her portrait, round for browser tabs and square for phone home screens, which round their
+own corners and paint any see through area black.
+
+**Clean addresses.** Pages moved from `/#/build-and-transfer` to `/build-and-transfer`.
+Old `#/` links still work, because the WhatsApp bot, her brief and Kommo messages all use
+them: the page rewrites them on arrival and keeps any `#section` on the end. Menu and quiz
+links change the address without reloading, and the back button works. The `#personas`
+jump on the home page is unchanged.
+
+**Old WordPress pages** redirect permanently: `/real-estate/` to `/build-and-transfer`,
+`/trainings-corporate-workshops/` to `/acquire-and-close`, `/masterclasses/` to
+`/strategy-day`, `/clients/` and `/testimonials/` to `/about`, `/work-with-me/` and
+`/appointment-type-01/` to home.
+
+**Why this repository is public.** On Vercel's free plan a private repository only deploys
+commits made by the Vercel account's owner, so a change pushed by anyone else is blocked
+with "Deployment was blocked". Collaboration is free for public repositories. Nothing
+private lives here: the page itself is public, and the only personal detail is the
+business WhatsApp number that the site already shows.
