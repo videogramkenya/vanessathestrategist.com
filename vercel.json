@@ -74,7 +74,7 @@
   ],
   "rewrites": [
     {
-      "source": "/:page(build-and-transfer|acquire-and-close|strategy-day|about)",
+      "source": "/:page(build-and-transfer|acquire-and-close|strategy-day|about|privacy)",
       "destination": "/index.html"
     }
   ]

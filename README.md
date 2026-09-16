@@ -1,7 +1,7 @@
 # Vanessa The Strategist, website
 
-One self-contained HTML file. Five pages at clean addresses: `/`, `/build-and-transfer`,
-`/acquire-and-close`, `/strategy-day` and `/about`. Fonts and photographs are embedded,
+One self-contained HTML file. Six pages at clean addresses: `/`, `/build-and-transfer`,
+`/acquire-and-close`, `/strategy-day`, `/about` and `/privacy`. Fonts and photographs are embedded,
 so the file works offline and can be hosted anywhere that serves a file.
 
 - `index.html`: the site. This is the one to publish.
@@ -114,3 +114,14 @@ commits made by the Vercel account's owner, so a change pushed by anyone else is
 with "Deployment was blocked". Collaboration is free for public repositories. Nothing
 private lives here: the page itself is public, and the only personal detail is the
 business WhatsApp number that the site already shows.
+
+## Privacy policy, 16 September 2026
+
+New page at `/privacy`, linked from the footer on every page. Written against the Kenya
+Data Protection Act, 2019 (section 29, what a privacy notice must say). Vanessa's answers:
+trading name Videogram Kenya, not registered with the Data Protection Commissioner,
+records kept up to two years after last contact, and the WhatsApp assistant disclosed as
+automated. The page names every outside service that handles personal data: Meta
+(WhatsApp), Kommo, Calendly, Selar, Google Analytics, and n8n, OpenRouter and Google for
+the assistant. **Update the page and its date if any of those change**, for example when
+Google Analytics is added or a service is swapped. Not reviewed by a lawyer.
