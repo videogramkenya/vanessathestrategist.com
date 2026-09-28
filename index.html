@@ -214,8 +214,8 @@ header.nav{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.93);bac
 @media(max-width:900px){.grid2,.grid3{grid-template-columns:1fr}}
 .stage{font-family:var(--mno);font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;color:var(--acc)}
 ul.tick{list-style:none;display:grid;gap:.6rem}
-ul.tick li{display:flex;gap:.7rem;font-size:.95rem;color:var(--ink2);align-items:flex-start;line-height:1.5}
-ul.tick li::before{content:"";width:15px;height:15px;border-radius:50%;flex:0 0 auto;margin-top:.28rem;border:1px solid var(--acc);background:radial-gradient(circle at 50% 50%,var(--acc) 0 4px,transparent 5px)}
+ul.tick li{display:block;position:relative;padding-left:1.45rem;font-size:.95rem;color:var(--ink2);line-height:1.5}
+ul.tick li::before{content:"";position:absolute;left:0;top:.42rem;width:15px;height:15px;border-radius:50%;border:1px solid var(--acc);background:radial-gradient(circle at 50% 50%,var(--acc) 0 4px,transparent 5px)}
 ul.plain{list-style:none;display:grid;gap:.5rem}
 ul.plain li{font-size:.93rem;color:var(--soft);padding-left:1.05rem;position:relative}
 ul.plain li::before{content:"—";position:absolute;left:0;color:var(--faint)}
@@ -235,6 +235,32 @@ th{text-align:left;font-family:var(--mno);font-size:.62rem;letter-spacing:.16em;
 td{padding:.95rem 1.1rem;border-bottom:1px solid var(--rule);color:var(--ink2);vertical-align:top;line-height:1.5}
 tr:last-child td{border-bottom:0}
 td:first-child{color:var(--ink);font-weight:500}
+
+/* On a phone the two-column table ran off the side and the second column could not be read.
+   Each row becomes a small card instead: the capability, then what it looks like. 28 Sep 2026. */
+@media(max-width:640px){
+ .tw{border:0;border-radius:0;overflow:visible}
+ .tw table,.tw tbody,.tw tr,.tw td{display:block;width:100%}
+ .tw thead{display:none}
+ .tw tr{border:1px solid var(--rule);border-radius:13px;margin-bottom:.75rem}
+ .tw td{border-bottom:0;padding:.7rem 1rem}
+ .tw td:first-child{font-weight:600;color:var(--ink);padding-bottom:.15rem}
+ .tw td:last-child{padding-top:0;font-size:.92rem}
+}
+
+/* client proof: clips and photos, added 28 Sep 2026 */
+.proofs{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.4rem;margin-top:2.2rem}
+.proof{margin:0}
+.proof video{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:3px;background:#000;display:block}
+.proof.wide video{aspect-ratio:16/9}
+.proof figcaption{margin-top:.7rem;font-size:.82rem;line-height:1.45;opacity:.78}
+.proof figcaption b{display:block;opacity:1;font-weight:600}
+.shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:2rem}
+.shots figure{margin:0}
+.shots figure{display:flex;flex-direction:column}
+.shots img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:3px;display:block}
+.shots figcaption{margin-top:.6rem;font-size:.8rem;opacity:.75}
+@media(max-width:640px){.proofs{grid-template-columns:1fr 1fr;gap:.9rem}.proof figcaption{font-size:.75rem}}
 
 /* objections */
 .objs{border-top:1px solid var(--rule);margin-top:2.2rem}
@@ -482,6 +508,19 @@ body{overflow-wrap:break-word}
 </section>
 
 <section>
+ <div class="wrap">
+  <p class="kick">In their words</p>
+  <h2>People who have sat in the room.</h2>
+  <p class="lead">Nothing here is written by me. Press play on any of them.</p>
+  <div class="proofs">
+  <figure class="proof"><video controls preload="none" playsinline poster="proof/michelle_founder.jpg" src="proof/michelle_founder.mp4"></video><figcaption><b>Ayuma Michelle, founder</b>&ldquo;For the first time, I actually find that there&rsquo;s value for money in investing in anything social media.&rdquo;</figcaption></figure>
+  <figure class="proof"><video controls preload="none" playsinline poster="proof/social_insider.jpg" src="proof/social_insider.mp4"></video><figcaption><b>The Social Insider, brand strategist</b>&ldquo;Ads were such a monster, but Vanessa simplified it.&rdquo;</figcaption></figure>
+  <figure class="proof"><video controls preload="none" playsinline poster="proof/ads_like_a_pro.jpg" src="proof/ads_like_a_pro.mp4"></video><figcaption><b>Business owner, after ads training</b>&ldquo;She sat down with me and trained me how to actually run ads like a pro.&rdquo;</figcaption></figure>
+  </div>
+ </div>
+</section>
+
+<section>
  <div class="wrap two">
   <div>
     <p class="kick">Flagship case</p>
@@ -652,6 +691,12 @@ body{overflow-wrap:break-word}
    <details><summary>Can this be done remotely?</summary><p>The campaign work is remote. The sales team training is in person &mdash; that&rsquo;s deliberate, because the transfer is the point.</p></details>
    <details><summary>What happens at the end of the four months?</summary><p>I exit. The campaigns, workflows, dashboard, SOPs and trained team remain with you, plus 30 days of post-exit support.</p></details>
   </div>
+ <div class="shots">
+  <figure><img loading="lazy" src="proof/muzi_launch.jpg" alt="The Muzi Salama launch"><figcaption>Muzi Salama launch, Nairobi</figcaption></figure>
+  <figure><img loading="lazy" src="proof/muzi_team.jpg" alt="The team at the Muzi Salama launch"><figcaption>On site with the team</figcaption></figure>
+ </div>
+ <p class="small" style="margin-top:1rem">Launch day at Muzi Salama, a residential development in Nairobi.</p>
+
   <div class="ctabox" style="margin-top:2.8rem">
    <h2>Tell me about the development.</h2>
    <p>Where it is, what stage the build is at, average unit price, and how many people are selling it. Four answers and I can tell you whether this fits.</p>
@@ -762,6 +807,16 @@ body{overflow-wrap:break-word}
    <details><summary>Can it be run remotely?</summary><p>It&rsquo;s designed as in-person working sessions. Ask and I&rsquo;ll advise on what&rsquo;s possible for your situation.</p></details>
    <details><summary>Do you work outside Nairobi?</summary><p>Acquire &amp; Close travels. Tell me where you are.</p></details>
   </div>
+ <div class="shots">
+  <figure><img loading="lazy" src="proof/kss_team.jpg" alt="The KSS team with their certificates"><figcaption>Acquire &amp; Close, graduation day</figcaption></figure>
+  <figure><img loading="lazy" src="proof/kss_terrence.jpg" alt="Vanessa handing over a certificate"><figcaption>Certificates, not slides</figcaption></figure>
+  <figure><img loading="lazy" src="proof/kss_daniel.jpg" alt="Another team member receiving a certificate"><figcaption>Four sessions, one team</figcaption></figure>
+ </div>
+ <p class="small" style="margin-top:1rem">The KSS team, after four Acquire &amp; Close sessions with their own accounts and their own pipeline.</p>
+ <div class="proofs" style="margin-top:1.8rem">
+  <figure class="proof"><video controls preload="none" playsinline poster="proof/not_what_i_expected.jpg" src="proof/not_what_i_expected.mp4"></video><figcaption><b>A business owner, on the day</b>&ldquo;Not what I was expecting, in a good way. Very engaging, extremely practical.&rdquo;</figcaption></figure>
+ </div>
+
   <div class="ctabox" style="margin-top:2.8rem">
    <h2>Tell me what your team sells.</h2>
    <p>What you sell, who does the selling, how many would be in the room, and whether anyone can currently tell you what a lead costs. That&rsquo;s enough for me to scope it.</p>
@@ -880,6 +935,11 @@ body{overflow-wrap:break-word}
    <details><summary>I just want to learn ads and I have no budget yet.</summary><p>Then this is where you start. I&rsquo;m honest about this one: I don&rsquo;t take on done-for-you work without an ad budget, because you can&rsquo;t hit a revenue target on organic &mdash; it&rsquo;s too slow and too unpredictable. The Strategy Day is the day you build the acquisition and revenue system, so the first budget you do deploy actually works.</p></details>
    <details><summary>How do I book?</summary><p>Use the booking link below, share a few dates that work for you, and the session goes on the calendar.</p></details>
   </div>
+ <div class="proofs">
+  <figure class="proof"><video controls preload="none" playsinline poster="proof/ads_made_sense.jpg" src="proof/ads_made_sense.mp4"></video><figcaption><b>Business owner, Meta Money Masterclass</b>&ldquo;For the first time, ads actually made sense. We built ads practically, step by step.&rdquo;</figcaption></figure>
+  <figure class="proof"><video controls preload="none" playsinline poster="proof/not_what_i_expected.jpg" src="proof/not_what_i_expected.mp4"></video><figcaption><b>A business owner, on the day</b>&ldquo;Not what I was expecting, in a good way. Very engaging, extremely practical.&rdquo;</figcaption></figure>
+ </div>
+
   <div class="ctabox" style="margin-top:2.8rem">
    <h2>One day. Then you know where your next sale comes from.</h2>
    <p>KES 70,000 for the day, plus KES 10,000 for anyone else you bring. At Arbor House in Nairobi, or at your place for an extra KES 5,000. Lifetime course access included.</p>

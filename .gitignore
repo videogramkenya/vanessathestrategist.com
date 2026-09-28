@@ -4,3 +4,10 @@ Thumbs.db
 .tmp/
 node_modules/
 *.log
+
+# The originals Vanessa sent (145MB) and the working files stay on the laptop.
+# Only the cut clips, their stills and the web-sized photos in proof/ are published.
+media/source/
+media/work/
+media/preview/
+media/cut/
