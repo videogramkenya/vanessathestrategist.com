@@ -32,8 +32,10 @@ CUTS = [
 
 def piece(src, start, end, out):
     subprocess.run(["ffmpeg", "-nostdin", "-v", "error", "-y", "-ss", str(start), "-to", str(end),
-                    "-i", str(src), "-vf", "scale=-2:720", "-c:v", "libx264", "-crf", "26",
-                    "-preset", "veryfast", "-c:a", "aac", "-b:a", "96k", "-movflags", "+faststart",
+                    "-i", str(src), # scale=-2:720 set the HEIGHT to 720, which on a portrait clip means 406 wide, half the
+# source. Keep the source width instead, never upscale. 28 Sep 2026.
+                    "-vf", "scale='min(720,iw)':-2", "-c:v", "libx264", "-crf", "23",
+                    "-preset", "slow", "-c:a", "aac", "-b:a", "96k", "-movflags", "+faststart",
                     str(out)], check=True)
 
 

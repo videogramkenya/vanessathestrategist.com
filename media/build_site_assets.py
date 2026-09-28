@@ -27,7 +27,7 @@ PHOTOS = {
 for name, at in POSTER_AT.items():
     src = CUT / name
     subprocess.run(["ffmpeg", "-nostdin", "-v", "error", "-y", "-ss", str(at), "-i", str(src),
-                    "-frames:v", "1", "-vf", "scale=-2:720", "-q:v", "6",
+                    "-frames:v", "1", "-vf", "scale='min(720,iw)':-2", "-q:v", "4",
                     str(OUT / (src.stem + ".jpg"))], check=True)
     (OUT / name).write_bytes(src.read_bytes())
 
