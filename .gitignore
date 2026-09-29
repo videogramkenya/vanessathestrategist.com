@@ -11,3 +11,7 @@ media/source/
 media/work/
 media/preview/
 media/cut/
+
+# Full-size logo originals stay on the laptop; web copies are in clients/, sources in media/logos/logos.csv
+media/logos/*
+!media/logos/logos.csv

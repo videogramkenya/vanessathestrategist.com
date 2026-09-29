@@ -164,12 +164,12 @@ header.nav{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.93);bac
 .model p{margin:1rem 0 0;font-size:.9rem;color:var(--soft)}
 
 /* stats */
-.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid var(--ink);margin-top:1.3rem}
+.stats{display:grid;grid-template-columns:repeat(6,1fr);border-top:2px solid var(--ink);margin-top:1.3rem}
 .stat{padding:1.4rem 1.15rem 1.4rem 0;border-right:1px solid var(--rule)}
 .stat+.stat{padding-left:1.15rem}
 .stat:last-child{border-right:0}
 .stat b{display:block;font-family:var(--dsp);font-size:clamp(1.9rem,3.2vw,2.5rem);font-weight:800;letter-spacing:-.03em;line-height:1}
-.s1 b{color:var(--mag)}.s2 b{color:var(--blue)}.s3 b{color:var(--tan)}.s4 b{color:var(--green)}
+.s1 b{color:var(--mag)}.s2 b{color:var(--blue)}.s3 b{color:var(--tan)}.s4 b{color:var(--green)}.s5 b{color:var(--mag)}.s6 b{color:var(--blue)}
 .stat span{display:block;margin-top:.5rem;font-size:.8rem;color:var(--soft);line-height:1.35}
 .logos{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.5rem}
 .logos i{font-style:normal;font-family:var(--mno);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);border:1px solid var(--rule);border-radius:999px;padding:.4rem .82rem}
@@ -377,6 +377,34 @@ body{overflow-wrap:break-word}
 .legal ul{margin:.6rem 0 0 1.2rem;display:grid;gap:.4rem}
 .legal a{color:var(--acc)}
 .legal-date{font-family:var(--mno);font-size:.72rem;letter-spacing:.08em;color:var(--faint);margin-top:1.1rem}
+
+/* client names under the numbers, 29 Sep 2026 */
+.clients{margin-top:2.6rem}
+.cgroup{display:grid;grid-template-columns:minmax(150px,210px) 1fr;gap:1.2rem;padding:1rem 0;border-top:1px solid var(--rule)}
+.cgroup:last-child{border-bottom:1px solid var(--rule)}
+.cgroup p{margin:0}
+.cgroup .cind{font-family:var(--mno);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);padding-top:.35rem}
+.cgroup .cnames{font-family:var(--dsp);font-size:clamp(1.02rem,1.5vw,1.2rem);font-weight:600;letter-spacing:-.01em;color:var(--ink);line-height:1.5}
+.cgroup .cnames i{font-style:normal;color:var(--rule2);margin:0 .5rem}
+@media(max-width:1000px) and (min-width:761px){.stats{grid-template-columns:repeat(3,1fr)}.stat:nth-child(3n){border-right:0}.stat:nth-child(-n+3){border-bottom:1px solid var(--rule)}.stat:nth-child(4){padding-left:0}}
+@media(max-width:760px){.cgroup{grid-template-columns:1fr;gap:.3rem}}
+
+/* the client names become their logos, 29 Sep 2026 */
+.clogos{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.6rem}
+.clogo{width:150px;height:84px;display:flex;align-items:center;justify-content:center;padding:12px 16px;background:var(--paper);border:1px solid var(--rule);border-radius:10px}
+.clogo img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;display:block}
+.clogo.dark{background:var(--ink);border-color:var(--ink)}
+.clogo.solid{padding:10px 14px}
+.clogo.cname{font-family:var(--dsp);font-weight:600;font-size:.95rem;letter-spacing:-.01em;line-height:1.2;color:var(--ink2);text-align:center;background:var(--wash)}
+@media(max-width:760px){.clogos{gap:.5rem}.clogo{width:calc(50% - .25rem);height:76px}}
+
+/* written client quotes under the videos, 29 Sep 2026 */
+.wquotes{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:2.6rem}
+.wquote{margin:0;padding-top:1.1rem;border-top:2px solid var(--ink);display:flex;flex-direction:column;gap:1rem}
+.wquote blockquote{margin:0;font-family:var(--dsp);font-size:clamp(1.02rem,1.4vw,1.15rem);font-weight:500;letter-spacing:-.01em;line-height:1.45;color:var(--ink)}
+.wquote blockquote::before{content:"\201C";display:block;font-size:2.6rem;font-weight:800;line-height:.8;color:var(--mag);margin-bottom:.2rem}
+.wquote figcaption{margin-top:auto;font-family:var(--mno);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--soft)}
+@media(max-width:900px){.wquotes{grid-template-columns:1fr;gap:1.8rem}}
 </style>
 </head>
 <body>
@@ -407,6 +435,54 @@ body{overflow-wrap:break-word}
   </figure>
  </div>
 </section>
+
+<section id="track-record">
+ <div class="wrap">
+  <p class="kick">Track record</p>
+  <h2>35 brands across 9 industries.</h2>
+  <p class="lead">Nairobi, Kenya and East Africa. Seven years inside live ad accounts.</p>
+  <div class="stats">
+    <div class="stat s1"><b>200+</b><span>SME owners trained</span></div>
+    <div class="stat s2"><b>50</b><span>corporate teams trained</span></div>
+    <div class="stat s3"><b>35+</b><span>brands built</span></div>
+    <div class="stat s4"><b>50+</b><span>masterclasses delivered</span></div>
+    <div class="stat s5"><b>7 yrs</b><span>in live ad accounts</span></div>
+    <div class="stat s6"><b>9</b><span>industries served</span></div>
+  </div>
+  <div class="clients">
+    <div class="cgroup"><p class="cind">Real estate</p><ul class="clogos"><li class="clogo"><img src="clients/ihs-kenya.png" alt="IHS Kenya" title="IHS Kenya" loading="lazy" decoding="async"></li><li class="clogo cname">Welcome Home</li></ul></div>
+    <div class="cgroup"><p class="cind">Beauty &amp; wellness</p><ul class="clogos"><li class="clogo solid" style="background:#fae91a;border-color:#fae91a"><img src="clients/beauty-square.jpg" alt="Beauty Square" title="Beauty Square" loading="lazy" decoding="async"></li><li class="clogo"><img src="clients/mayas-salon.jpg" alt="Maya&rsquo;s Salon" title="Maya&rsquo;s Salon" loading="lazy" decoding="async"></li><li class="clogo"><img src="clients/carey-beauty-college.png" alt="Carey Beauty College" title="Carey Beauty College" loading="lazy" decoding="async"></li><li class="clogo"><img src="clients/joannak-cosmetics.jpg" alt="Joannak Cosmetics" title="Joannak Cosmetics" loading="lazy" decoding="async"></li><li class="clogo dark"><img src="clients/insmile-aesthetics.png" alt="Insmile Aesthetics" title="Insmile Aesthetics" loading="lazy" decoding="async"></li><li class="clogo solid" style="background:#1f2b15;border-color:#1f2b15"><img src="clients/fahma-aesthetics.jpg" alt="Fahma Aesthetics" title="Fahma Aesthetics" loading="lazy" decoding="async"></li><li class="clogo solid" style="background:#1a1a1a;border-color:#1a1a1a"><img src="clients/lerisque-africa.jpg" alt="Lerisque Africa" title="Lerisque Africa" loading="lazy" decoding="async"></li></ul></div>
+    <div class="cgroup"><p class="cind">Fashion &amp; lifestyle</p><ul class="clogos"><li class="clogo"><img src="clients/the-lip-tribe.png" alt="The Lip Tribe" title="The Lip Tribe" loading="lazy" decoding="async"></li><li class="clogo solid" style="background:#85005b;border-color:#85005b"><img src="clients/jesus-girl-closet.jpg" alt="Jesus Girl Closet" title="Jesus Girl Closet" loading="lazy" decoding="async"></li><li class="clogo"><img src="clients/bouchic.jpg" alt="Bouchic" title="Bouchic" loading="lazy" decoding="async"></li><li class="clogo cname">Artistry by Njanja</li><li class="clogo cname">Glam by Julie</li><li class="clogo solid" style="background:#010101;border-color:#010101"><img src="clients/wan-styling.jpg" alt="Wan Styling" title="Wan Styling" loading="lazy" decoding="async"></li></ul></div>
+    <div class="cgroup"><p class="cind">Automotive</p><ul class="clogos"><li class="clogo dark"><img src="clients/imports-by-rigi.png" alt="Imports by Rigi" title="Imports by Rigi" loading="lazy" decoding="async"></li><li class="clogo"><img src="clients/yohana-motors.jpg" alt="Yohana Motors" title="Yohana Motors" loading="lazy" decoding="async"></li><li class="clogo cname">Black Carbon</li><li class="clogo cname">Winny Imports</li></ul></div>
+    <div class="cgroup"><p class="cind">Technology</p><ul class="clogos"><li class="clogo"><img src="clients/computer-pride.png" alt="Computer Pride" title="Computer Pride" loading="lazy" decoding="async"></li><li class="clogo"><img src="clients/mophones.png" alt="Mophones" title="Mophones" loading="lazy" decoding="async"></li><li class="clogo"><img src="clients/foresight-tech-group.jpg" alt="Foresight Tech Group" title="Foresight Tech Group" loading="lazy" decoding="async"></li><li class="clogo solid" style="background:#ec242e;border-color:#ec242e"><img src="clients/pts-africa.jpg" alt="PTS Africa" title="PTS Africa" loading="lazy" decoding="async"></li></ul></div>
+    <div class="cgroup"><p class="cind">Finance &amp; professional</p><ul class="clogos"><li class="clogo"><img src="clients/icpak.svg" alt="ICPAK" title="ICPAK" loading="lazy" decoding="async"></li><li class="clogo"><img src="clients/binance.svg" alt="Binance" title="Binance" loading="lazy" decoding="async"></li><li class="clogo solid" style="background:#f59121;border-color:#f59121"><img src="clients/centonomy.jpg" alt="Centonomy" title="Centonomy" loading="lazy" decoding="async"></li><li class="clogo"><img src="clients/fermentis.png" alt="Fermentis" title="Fermentis" loading="lazy" decoding="async"></li></ul></div>
+    <div class="cgroup"><p class="cind">Education</p><ul class="clogos"><li class="clogo"><img src="clients/kenya-school-of-sales.jpg" alt="Kenya School of Sales" title="Kenya School of Sales" loading="lazy" decoding="async"></li></ul></div>
+    <div class="cgroup"><p class="cind">Travel &amp; tourism</p><ul class="clogos"><li class="clogo cname">Safirii</li><li class="clogo"><img src="clients/savi-tours.png" alt="Savi Tours" title="Savi Tours" loading="lazy" decoding="async"></li></ul></div>
+    <div class="cgroup"><p class="cind">Events &amp; entertainment</p><ul class="clogos"><li class="clogo dark"><img src="clients/pritt-events.png" alt="Pritt Events" title="Pritt Events" loading="lazy" decoding="async"></li><li class="clogo"><img src="clients/glam-events-kenya.png" alt="Glam Events Kenya" title="Glam Events Kenya" loading="lazy" decoding="async"></li><li class="clogo dark"><img src="clients/game-nights-254.png" alt="Game Nights 254" title="Game Nights 254" loading="lazy" decoding="async"></li></ul></div>
+    <div class="cgroup"><p class="cind">Media &amp; content</p><ul class="clogos"><li class="clogo"><img src="clients/create-with-ayan.jpg" alt="Create with Ayan" title="Create with Ayan" loading="lazy" decoding="async"></li></ul></div>
+    <div class="cgroup"><p class="cind">Home &amp; interiors</p><ul class="clogos"><li class="clogo"><img src="clients/tanj-curtains.png" alt="Tanj Curtains" title="Tanj Curtains" loading="lazy" decoding="async"></li></ul></div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="wrap">
+  <p class="kick">In their words</p>
+  <h2>People who have sat in the room.</h2>
+  <p class="lead">Nothing here is written by me. Press play on any of them.</p>
+  <div class="proofs">
+  <figure class="proof"><video controls preload="none" playsinline poster="proof/michelle_founder.jpg" src="proof/michelle_founder.mp4"></video><figcaption><b>Ayuma Michelle, founder</b>&ldquo;For the first time, I actually find that there&rsquo;s value for money in investing in anything social media.&rdquo;</figcaption></figure>
+  <figure class="proof"><video controls preload="none" playsinline poster="proof/social_insider.jpg" src="proof/social_insider.mp4"></video><figcaption><b>The Social Insider, brand strategist</b>&ldquo;Ads were such a monster, but Vanessa simplified it.&rdquo;</figcaption></figure>
+  <figure class="proof"><video controls preload="none" playsinline poster="proof/ads_like_a_pro.jpg" src="proof/ads_like_a_pro.mp4"></video><figcaption><b>Business owner, after ads training</b>&ldquo;She sat down with me and trained me how to actually run ads like a pro.&rdquo;</figcaption></figure>
+  </div>
+  <div class="wquotes">
+   <figure class="wquote"><blockquote>Vanessa doesn&rsquo;t just run your ads. She builds the whole system &mdash; the funnel, the follow-up, the handover to sales. We saw qualified leads within the first week.</blockquote><figcaption>Property developer &middot; Nairobi</figcaption></figure>
+   <figure class="wquote"><blockquote>The training she delivered to our team was the best investment we made this year. Practical, no fluff, and immediately applicable. Our team actually understood the full funnel.</blockquote><figcaption>Marketing director &middot; Nairobi</figcaption></figure>
+   <figure class="wquote"><blockquote>I came in with zero clarity on what was working in my marketing. I left with a 90-day plan, a tracking dashboard, and a team that finally understood what they were measuring.</blockquote><figcaption>SME founder, beauty &middot; Nairobi</figcaption></figure>
+  </div>
+ </div>
+</section>
+
 
 <section id="personas">
  <div class="wrap">
@@ -464,19 +540,6 @@ body{overflow-wrap:break-word}
  </div>
 </section>
 
-<section>
- <div class="wrap">
-  <p class="kick">Track record &middot; last twelve months</p>
-  <div class="stats">
-    <div class="stat s1"><b>200+</b><span>SME owners trained</span></div>
-    <div class="stat s2"><b>50</b><span>corporate teams trained</span></div>
-    <div class="stat s3"><b>10</b><span>masterclasses hosted</span></div>
-    <div class="stat s4"><b>7 yrs</b><span>building revenue systems in Kenya</span></div>
-  </div>
-  <div class="logos"><i>Kenya School of Sales</i><i>Computer Pride</i><i>Centonomy</i></div>
- </div>
-</section>
-
 <section id="services">
  <div class="wrap">
   <p class="kick">The three services</p>
@@ -504,19 +567,6 @@ body{overflow-wrap:break-word}
   </div>
   <div><p class="sblurb">A four-month programme that builds your in-house buyer-acquisition system, runs it, trains your sales team on it, and transfers full ownership on exit.</p><ul class="sbul"><li>Demand generation, WhatsApp qualification and sales handover, built as one chain</li><li>A live pipeline dashboard from first contact to closed unit</li><li>Sales team training and certification, plus written SOPs</li><li>30 days of post-exit support &mdash; then it is entirely yours</li></ul></div>
 </article></div>
- </div>
-</section>
-
-<section>
- <div class="wrap">
-  <p class="kick">In their words</p>
-  <h2>People who have sat in the room.</h2>
-  <p class="lead">Nothing here is written by me. Press play on any of them.</p>
-  <div class="proofs">
-  <figure class="proof"><video controls preload="none" playsinline poster="proof/michelle_founder.jpg" src="proof/michelle_founder.mp4"></video><figcaption><b>Ayuma Michelle, founder</b>&ldquo;For the first time, I actually find that there&rsquo;s value for money in investing in anything social media.&rdquo;</figcaption></figure>
-  <figure class="proof"><video controls preload="none" playsinline poster="proof/social_insider.jpg" src="proof/social_insider.mp4"></video><figcaption><b>The Social Insider, brand strategist</b>&ldquo;Ads were such a monster, but Vanessa simplified it.&rdquo;</figcaption></figure>
-  <figure class="proof"><video controls preload="none" playsinline poster="proof/ads_like_a_pro.jpg" src="proof/ads_like_a_pro.mp4"></video><figcaption><b>Business owner, after ads training</b>&ldquo;She sat down with me and trained me how to actually run ads like a pro.&rdquo;</figcaption></figure>
-  </div>
  </div>
 </section>
 
@@ -981,7 +1031,7 @@ body{overflow-wrap:break-word}
     <dt>Role</dt><dd>Revenue Architect &amp; Growth Strategist</dd>
     <dt>Company</dt><dd>Founder, Videogram Kenya</dd>
     <dt>Experience</dt><dd>7 years building revenue growth systems in Kenya</dd>
-    <dt>Last twelve months</dt><dd>200+ SME owners trained &middot; 50 corporate teams &middot; 10 masterclasses hosted</dd>
+    <dt>Track record</dt><dd>200+ SME owners trained &middot; 50 corporate teams &middot; 50+ masterclasses delivered &middot; 35+ brands across 9 industries</dd>
     <dt>Organisations trained</dt><dd>Kenya School of Sales &middot; Computer Pride &middot; Centonomy</dd>
     <dt>Based</dt><dd>Arbor House, Arboretum Drive, Block B, First Floor, Nairobi</dd>
    </dl>
