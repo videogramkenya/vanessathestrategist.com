@@ -2,13 +2,23 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/build-and-transfer/",
+      "destination": "/property-select",
+      "permanent": true
+    },
+    {
+      "source": "/build-and-transfer",
+      "destination": "/property-select",
+      "permanent": true
+    },
+    {
       "source": "/real-estate",
-      "destination": "/build-and-transfer",
+      "destination": "/property-select",
       "permanent": true
     },
     {
       "source": "/real-estate/",
-      "destination": "/build-and-transfer",
+      "destination": "/property-select",
       "permanent": true
     },
     {
@@ -78,7 +88,7 @@
       "destination": "/thank-you.html"
     },
     {
-      "source": "/:page(build-and-transfer|acquire-and-close|strategy-day|about|privacy)",
+      "source": "/:page(property-select|acquire-and-close|strategy-day|about|privacy)",
       "destination": "/index.html"
     }
   ]
