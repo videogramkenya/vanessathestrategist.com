@@ -439,12 +439,12 @@ body{overflow-wrap:break-word}
 .ps-acc{color:var(--acc)}
 .ps-dark .ps-acc{color:#FF5CA8}
 .ps-six{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:2rem 0 0}
-.ps-six div{background:#fff;border:1px solid var(--rule);border-radius:13px;padding:1.15rem 1.25rem;font-weight:600;line-height:1.35;color:var(--ink);font-size:.98rem}
+.ps-six div{background:#fff;border:1px solid var(--rule);border-radius:13px;padding:1.15rem 1.25rem;font-weight:400;line-height:1.35;color:var(--ink);font-size:.98rem}
 .ps-six span{display:block;font-family:var(--mno);font-size:.72rem;color:var(--acc);margin-bottom:.4rem;font-weight:400}
 .ps-after{display:grid;grid-template-columns:1.15fr .85fr;gap:1rem;margin-top:1rem;align-items:stretch}
 .ps-after>div{border-radius:13px;padding:1.4rem 1.5rem}
 .ps-after .a{background:#fff;border:1px solid var(--rule);font-size:1.02rem;color:var(--ink2)}
-.ps-after .b{background:var(--acc);color:#fff;font-family:var(--dsp);font-weight:800;font-size:1.25rem;line-height:1.2;letter-spacing:-.02em;display:flex;align-items:center}
+.ps-after .b{background:var(--acc);color:#fff;font-size:1.02rem;line-height:1.4;display:flex;align-items:center}
 .ps-side{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(1.6rem,5vw,4.5rem);align-items:start}
 .ps-stick{position:sticky;top:96px}
 .ps-time{list-style:none;padding:0;margin:0}
@@ -453,7 +453,7 @@ body{overflow-wrap:break-word}
 .ps-time li::after{content:"";position:absolute;left:6px;top:.8rem;bottom:-.32rem;width:1px;background:var(--rule2)}
 .ps-time li:last-child{padding-bottom:0}
 .ps-time li:last-child::after{display:none}
-.ps-time li.k{color:var(--ink);font-weight:700}
+.ps-time li.k{color:var(--ink)}
 .ps-time li.k::before{background:var(--acc);border-color:var(--acc)}
 .ps-model{margin:1.6rem 0 0}
 .ps-list{list-style:none;padding:0;margin:0;border-top:1px solid rgba(255,255,255,.18)}
@@ -470,7 +470,7 @@ body{overflow-wrap:break-word}
 .ps-chips{display:flex;flex-wrap:wrap;gap:.4rem;margin:.75rem 0}
 .ps-chips span{border:1px solid var(--rule2);border-radius:999px;padding:.28rem .72rem;font-size:.84rem;color:var(--ink2);background:#fff;line-height:1.3}
 .ps-q{list-style:none;padding:0;margin:0;counter-reset:q}
-.ps-q li{counter-increment:q;display:grid;grid-template-columns:2.4rem 1fr;align-items:baseline;padding:.85rem 0;border-bottom:1px solid var(--rule);font-weight:600;color:var(--ink);line-height:1.35}
+.ps-q li{counter-increment:q;display:grid;grid-template-columns:2.4rem 1fr;align-items:baseline;padding:.85rem 0;border-bottom:1px solid var(--rule);font-weight:400;color:var(--ink);line-height:1.35}
 .ps-q li:first-child{border-top:1px solid var(--rule)}
 .ps-q li::before{content:counter(q,decimal-leading-zero);font-family:var(--mno);font-size:.72rem;color:var(--acc);font-weight:400}
 .ps-end{margin-top:1.2rem;color:var(--ink2)}
@@ -480,7 +480,7 @@ body{overflow-wrap:break-word}
 .ps-panel p{margin:0 0 .75rem;color:var(--ink2);line-height:1.55}
 .ps-panel p:last-child{margin-bottom:0}
 .ps-loop{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem;margin:.9rem 0}
-.ps-loop b{font-weight:600;font-size:.88rem;border:1px solid var(--acc);color:var(--acc);border-radius:8px;padding:.42rem .72rem;background:#fff}
+.ps-loop span{font-weight:400;font-size:.88rem;border:1px solid var(--acc);color:var(--acc);border-radius:8px;padding:.42rem .72rem;background:#fff}
 .ps-loop i{font-style:normal;color:var(--faint)}
 .ps-get{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.2rem}
 .ps-get>div{background:#fff;border:1px solid var(--rule);border-radius:14px;padding:1.45rem}
@@ -498,12 +498,12 @@ body{overflow-wrap:break-word}
 .ps-no{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:1.8rem 0 2.6rem}
 .ps-no p{margin:0;border-top:2px solid var(--rule2);padding-top:.8rem;color:var(--soft);font-size:1rem;line-height:1.45}
 .ps-say{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:.9rem;align-items:center;margin:1.2rem 0 1.6rem}
-.ps-say h3{margin:0;background:#fff;border:1px solid var(--rule);border-radius:14px;padding:1.35rem;font-size:1.15rem;line-height:1.25;height:100%;display:flex;align-items:center}
+.ps-say h3{margin:0;font-family:var(--bdy);font-weight:400;letter-spacing:0;background:#fff;border:1px solid var(--rule);border-radius:14px;padding:1.35rem;font-size:1.15rem;line-height:1.25;height:100%;display:flex;align-items:center}
 .ps-say h3:last-of-type{background:var(--acc);border-color:var(--acc);color:#fff}
 .ps-say span{color:var(--soft);font-size:.92rem}
 .ps-belief{display:grid;grid-template-columns:repeat(2,1fr);gap:.2rem 2rem;margin:1.4rem 0}
 .ps-belief p{margin:0;padding:.6rem 0;border-bottom:1px solid var(--rule);color:var(--ink2)}
-.ps-chain{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;margin:.7rem 0 1.2rem;font-family:var(--dsp);font-weight:800;font-size:clamp(1.05rem,2vw,1.4rem);letter-spacing:-.02em;color:var(--ink)}
+.ps-chain{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;margin:.7rem 0 1.2rem;font-size:1.05rem;color:var(--ink)}
 .ps-chain i{font-style:normal;color:var(--acc)}
 @media(max-width:900px){
  .ps-six,.ps-steps,.ps-get{grid-template-columns:1fr 1fr}
@@ -754,7 +754,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <section class="ps-wash">
  <div class="wrap">
-  <h2>Property Select is built differently.</h2>
+  <p class="ps-lead">Property Select is built differently.</p>
   <div class="ps-six">
    <div><span>01</span>We generate the demand.</div>
    <div><span>02</span>We qualify the buyer.</div>
@@ -764,7 +764,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
    <div><span>06</span>We stay with the buyer through the decision-making process.</div>
   </div>
   <div class="ps-after">
-   <div class="a">And when the buyer is ready to sign a sales agreement with you, <b>we hand over the transaction and collect our success fee.</b></div>
+   <div class="a">And when the buyer is ready to sign a sales agreement with you, we hand over the transaction and collect our success fee.</div>
    <div class="b">Your team gets involved when the buyer is ready to buy.</div>
   </div>
  </div>
@@ -775,7 +775,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="ps-stick">
    <h2>Property Select is your outsourced buyer acquisition &amp; sales engine.</h2>
    <p class="ps-lead" style="margin-top:1.3rem">Most property marketing stops at the lead.</p>
-   <p class="ps-big">Property Select doesn't.</p>
+   <p class="ps-lead">Property Select doesn't.</p>
   </div>
   <div>
    <ol class="ps-time">
@@ -792,7 +792,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <li class="k">You close the transaction.</li>
     <li class="k">We collect our agreed success fee.</li>
    </ol>
-   <p class="ps-big ps-model">That's the model.</p>
+   <p class="ps-lead ps-model">That's the model.</p>
   </div>
  </div>
 </section>
@@ -801,10 +801,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  <div class="wrap ps-side">
   <div>
    <h2>You provide the property. We build the buyer.</h2>
-   <p class="lead">Property Select sits between <b>property supply and consumer demand.</b></p>
+   <p class="lead">Property Select sits between property supply and consumer demand.</p>
    <p class="lead">You bring the inventory.</p>
    <p class="lead" style="margin-top:.5rem">We bring the buyer.</p>
-   <p class="lead">But more importantly, <b>we take responsibility for moving that buyer through the journey.</b></p>
+   <p class="lead">But more importantly, we take responsibility for moving that buyer through the journey.</p>
   </div>
   <div>
    <p style="margin:0 0 .9rem">That means your sales team doesn't have to spend its time:</p>
@@ -813,7 +813,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <li>Sending endless property options</li><li>Coordinating every early-stage viewing</li><li>Following up with people who were never ready to buy</li>
    </ul>
    <p style="margin:1.5rem 0 .4rem">Our job is to get the buyer as close to the transaction as possible.</p>
-   <p class="ps-big ps-acc">Your job is to close.</p>
+   <p class="ps-lead">Your job is to close.</p>
   </div>
  </div>
 </section>
@@ -826,12 +826,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
    <div class="ps-step"><span class="ps-num">01</span><h3>Demand</h3><p>We use paid media, content and the Property Select consumer brand to attract people actively considering property.</p></div>
    <div class="ps-step"><span class="ps-num">02</span><h3>Qualification</h3><p>We understand the buyer before we recommend a property.</p>
     <div class="ps-chips"><span>Budget.</span><span>Location.</span><span>Property type.</span><span>Bedrooms.</span><span>Purpose.</span><span>Timeline.</span><span>Financing.</span></div>
-    <p>And most importantly:</p><p><b>Are they actually in a position to buy?</b></p></div>
+    <p>And most importantly:</p><p>Are they actually in a position to buy?</p></div>
    <div class="ps-step"><span class="ps-num">03</span><h3>Matching</h3><p>Our technology and team identify properties that fit the buyer instead of forcing buyers through endless irrelevant listings.</p></div>
-   <div class="ps-step"><span class="ps-num">04</span><h3>Viewing</h3><p>A Property Select agent takes ownership of the buyer experience and coordinates the viewing.</p><p>The buyer doesn't disappear into a lead form.</p><p><b>We stay with them.</b></p></div>
+   <div class="ps-step"><span class="ps-num">04</span><h3>Viewing</h3><p>A Property Select agent takes ownership of the buyer experience and coordinates the viewing.</p><p>The buyer doesn't disappear into a lead form.</p><p>We stay with them.</p></div>
    <div class="ps-step"><span class="ps-num">05</span><h3>Decision</h3><p>We continue the conversation, understand objections, answer questions and help the buyer move toward a decision.</p></div>
    <div class="ps-step"><span class="ps-num">06</span><h3>Handover</h3><p>Once the buyer is ready to execute a purchase, we introduce them to the developer or property owner for the formal sales agreement and transaction process.</p></div>
-   <div class="ps-step ps-wide"><div><span class="ps-num">07</span><h3>Success fee</h3></div><p>When the transaction is completed, Property Select earns its agreed <b>10% success fee based on the property's sale value.</b></p></div>
+   <div class="ps-step ps-wide"><div><span class="ps-num">07</span><h3>Success fee</h3></div><p>When the transaction is completed, Property Select earns its agreed 10% success fee based on the property's sale value.</p></div>
   </div>
  </div>
 </section>
@@ -840,7 +840,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  <div class="wrap ps-side">
   <div>
    <h2>Why this model matters</h2>
-   <p class="ps-big" style="margin-top:1.2rem">Because <span class="ps-acc">a lead is not a sale.</span></p>
+   <p class="ps-lead">Because a lead is not a sale.</p>
    <p class="ps-lead" style="margin-top:1.3rem">A 5,000-lead database doesn't impress us.</p>
    <p class="ps-lead">Neither does a campaign with cheap enquiries.</p>
   </div>
@@ -863,17 +863,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
    <p>Property Select owns the buyer journey until the buyer is commercially ready.</p>
    <p>Your team then takes over the formal transaction:</p>
    <div class="ps-chips"><span>Sales agreement</span><span>Documentation</span><span>Legal process</span><span>Payment</span><span>Completion</span><span>Handover</span></div>
-   <p>This means your team spends more of its time on <b>buyers who are ready to transact</b>, rather than trying to create intent from scratch.</p>
+   <p>This means your team spends more of its time on buyers who are ready to transact, rather than trying to create intent from scratch.</p>
   </div>
   <div class="ps-panel">
    <h2>Why Videogram?</h2>
-   <p>Property Select is powered by <b>Videogram Kenya</b>.</p>
+   <p>Property Select is powered by Videogram Kenya.</p>
    <p>Videogram brings the demand-generation infrastructure behind the marketplace:</p>
    <div class="ps-chips"><span>Paid acquisition.</span><span>Content.</span><span>Creative.</span><span>Conversion strategy.</span><span>Buyer acquisition.</span><span>Data.</span><span>Marketing intelligence.</span></div>
    <p>But Property Select goes beyond advertising.</p>
-   <p>We are building the <b>sales layer between the advertisement and the transaction.</b></p>
+   <p>We are building the sales layer between the advertisement and the transaction.</p>
    <p>Because getting someone to enquire about a KES 20M apartment is easy compared to getting them to actually buy it.</p>
-   <p><b>That's the gap we're solving.</b></p>
+   <p>That's the gap we're solving.</p>
   </div>
  </div>
 </section>
@@ -892,7 +892,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <li>What is stopping them from moving forward?</li><li>What do they need to see before they make a decision?</li>
    </ol>
    <p class="ps-end" style="margin-bottom:0">This creates a feedback loop between:</p>
-   <div class="ps-loop"><b>Buyer</b><i>&rarr;</i><b>Agent</b><i>&rarr;</i><b>Property</b><i>&rarr;</i><b>Developer</b><i>&rarr;</i><b>Transaction</b></div>
+   <div class="ps-loop"><span>Buyer</span><i>&rarr;</i><span>Agent</span><i>&rarr;</i><span>Property</span><i>&rarr;</i><span>Developer</span><i>&rarr;</i><span>Transaction</span></div>
    <p style="margin:0;color:var(--ink2)">And every transaction gives Property Select more intelligence about what buyers actually want.</p>
   </div>
  </div>
@@ -919,15 +919,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="ps-price">
    <div>
     <h3><span class="fig">KES 150,000</span>minimum monthly media commitment</h3>
-    <p>Every Property Select partner commits a minimum of <b>KES 150,000 per month in advertising media spend.</b></p>
+    <p>Every Property Select partner commits a minimum of KES 150,000 per month in advertising media spend.</p>
     <p>That funds the demand-generation engine behind your inventory.</p>
     <p>Property Select, powered by Videogram, manages the strategy, campaigns, creative direction and optimisation.</p>
    </div>
    <div>
     <h3><span class="fig">10%</span>success fee</h3>
-    <p>When a buyer generated and managed through the Property Select system purchases your property, Property Select earns a <b>10% success fee based on the property's sale value.</b></p>
+    <p>When a buyer generated and managed through the Property Select system purchases your property, Property Select earns a 10% success fee based on the property's sale value.</p>
     <p>We don't charge you simply because your property exists on our marketplace.</p>
-    <p><b>Our biggest commercial upside comes when your property sells.</b></p>
+    <p>Our biggest commercial upside comes when your property sells.</p>
    </div>
   </div>
  </div>
@@ -939,13 +939,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="ps-no">
    <p>We don't promise you leads.</p><p>We don't promise you impressions.</p><p>We don't promise you enquiries that your sales team has to chase.</p>
   </div>
-  <p class="ps-lead"><b>We are building a system designed to take a consumer from:</b></p>
+  <p class="ps-lead">We are building a system designed to take a consumer from:</p>
   <div class="ps-say">
    <h3>&ldquo;I'm thinking about buying property.&rdquo;</h3><span>to</span>
    <h3>&ldquo;This is the property I want.&rdquo;</h3><span>to</span>
    <h3>&ldquo;I'm ready to sign.&rdquo;</h3>
   </div>
-  <p class="ps-lead">And at that point, <b>we hand the buyer to you.</b></p>
+  <p class="ps-lead">And at that point, we hand the buyer to you.</p>
  </div>
 </section>
 
@@ -953,7 +953,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  <div class="wrap">
   <h2>We're building the property buying journey differently.</h2>
   <p class="lead">Property Select is starting with a simple belief:</p>
-  <p class="ps-big" style="margin-top:1rem;max-width:34ch">Buying property should feel less like searching through hundreds of listings and more like being matched to the right opportunity.</p>
+  <p class="ps-lead">Buying property should feel less like searching through hundreds of listings and more like being matched to the right opportunity.</p>
   <div class="ps-belief">
    <p>Our technology helps with the matching.</p><p>Our agents manage the human relationship.</p>
    <p>Our marketing engine creates the demand.</p><p>And our property partners provide the inventory.</p>
