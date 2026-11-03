@@ -88,6 +88,14 @@
       "destination": "/thank-you.html"
     },
     {
+      "source": "/webinar",
+      "destination": "/webinar.html"
+    },
+    {
+      "source": "/webinar/watch",
+      "destination": "/webinar-watch.html"
+    },
+    {
       "source": "/:page(property-select|acquire-and-close|strategy-day|about|privacy)",
       "destination": "/index.html"
     }
