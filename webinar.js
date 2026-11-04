@@ -6,6 +6,24 @@
 
   function store(k, v) { try { sessionStorage.setItem(k, JSON.stringify(v)); return true; } catch (e) { return false; } }
   function fetchStore(k) { try { return JSON.parse(sessionStorage.getItem(k)); } catch (e) { return null; } }
+  function drop(k) { try { sessionStorage.removeItem(k); } catch (e) {} }
+  /* When the browser refuses to save the sign-up, the lead number and signature travel in the
+     address after # instead (never sent to a server). "ok=1" means signed up, nothing to report. */
+  function toHash(ref) {
+    return ref.lead_id && ref.sig ? "l=" + encodeURIComponent(ref.lead_id) + "&s=" + encodeURIComponent(ref.sig) : "ok=1";
+  }
+  function fromHash() {
+    var o = {};
+    try {
+      (location.hash || "").replace(/^#/, "").split("&").forEach(function (p) {
+        var i = p.indexOf("=");
+        if (i > 0) o[decodeURIComponent(p.slice(0, i))] = decodeURIComponent(p.slice(i + 1));
+      });
+    } catch (e) { return null; }
+    if (/^\d{1,15}$/.test(o.l || "") && /^[0-9a-f]{64}$/.test(o.s || "")) return { lead_id: o.l, sig: o.s };
+    if (o.ok === "1") return { lead_id: null, sig: null };
+    return null;
+  }
   function send(payload, timeoutMs) {
     var ctl = window.AbortController ? new AbortController() : null;
     var timer = ctl ? setTimeout(function () { ctl.abort(); }, timeoutMs || 15000) : null;
@@ -39,9 +57,11 @@
         elapsed_ms: Date.now() - loaded
       }).then(function (res) {
         if (res.status === 200 && res.body && res.body.ok) {
-          store(KEY, { lead_id: res.body.lead_id || null, sig: res.body.sig || null });
+          var ref = { lead_id: res.body.lead_id || null, sig: res.body.sig || null };
+          var saved = store(KEY, ref);
+          drop(SENT); /* a new sign-up starts a fresh record of progress sent, so it reaches this lead */
           track("webinar_signup");
-          location.assign("/webinar/watch");
+          location.assign("/webinar/watch" + (saved ? "" : "#" + toHash(ref)));
         } else {
           btn.disabled = false;
           msg.textContent = "Something went wrong on our side. Please try again in a moment.";
@@ -55,7 +75,7 @@
 
   /* ---------- watch page ---------- */
   if (page === "watch") {
-    var sess = fetchStore(KEY);
+    var sess = fromHash() || fetchStore(KEY);
     if (!sess) { location.replace("/webinar"); return; }
     var box = document.getElementById("player");
     var next = document.getElementById("next");
