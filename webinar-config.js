@@ -3,5 +3,6 @@
 window.WEBINAR_CONFIG = {
   webhookUrl: "https://n8n.loopsera.com/webhook/demo-webinar-signup", /* DEMO receiver, ticket #046 */
   bunny: { libraryId: "REPLACE_AT_GO_LIVE", videoId: "REPLACE_AT_GO_LIVE" },
-  html5Url: "/proof/webinar-lead-follow-up.mp4" /* STAND-IN clip until the Bunny video exists */
+  html5Url: "/webinar-media/why-more-leads-arent-turning-into-more-sales.mp4", /* the recording, hosted on her own site (Alex, 4 Nov 2026) */
+  posterUrl: "/webinar-media/why-more-leads-poster.jpg"
 };

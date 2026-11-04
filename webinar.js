@@ -91,7 +91,7 @@
 
     if (C.html5Url) {
       var v = document.createElement("video");
-      v.controls = true; v.setAttribute("playsinline", ""); v.preload = "metadata"; v.src = C.html5Url;
+      v.controls = true; v.setAttribute("playsinline", ""); v.preload = "metadata"; if (C.posterUrl) v.poster = C.posterUrl; v.src = C.html5Url;
       box.appendChild(v);
       v.addEventListener("play", onPlay);
       v.addEventListener("timeupdate", function () { onTime(v.currentTime, v.duration); });
