@@ -56,7 +56,11 @@ if (location.protocol === 'https:' || location.protocol === 'http:') {
 <div class="field"><label for="last_name">Last name</label><input type="text" id="last_name" name="last_name" autocomplete="family-name" required maxlength="80"></div>
 </div>
 <div class="field"><label for="email">Email</label><input type="email" id="email" name="email" autocomplete="email" required maxlength="200"></div>
-<div class="hp" aria-hidden="true"><label for="company_website">Leave this empty</label><input type="text" id="company_website" name="company_website" tabindex="-1" autocomplete="off"></div>
+<!-- Spam trap. A person never sees it, so anything in it means a form filled in blindly. It is NOT named anything
+     like "company" or "website" any more: on 13 Nov 2026 the old name company_website was autofilled with a real
+     person's company name by their own browser, and their sign-up was silently thrown away. It is also readonly,
+     which browsers and password managers skip but a bot setting values directly does not. -->
+<div class="hp" aria-hidden="true"><label for="hpx">Leave this empty</label><input type="text" id="hpx" name="hpx" tabindex="-1" readonly autocomplete="off"></div>
 <button class="button" id="signup-btn" type="submit">Watch the training <span aria-hidden="true">&rarr;</span></button>
 <p class="msg" id="form-msg" role="alert" aria-live="polite"></p>
 <p class="small">The video opens straight away. By continuing you agree to our <a href="https://www.vanessathestrategist.com/privacy">privacy policy</a>.</p>
