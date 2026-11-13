@@ -53,7 +53,7 @@
       send({
         type: "signup",
         first_name: d.get("first_name"), last_name: d.get("last_name"), email: d.get("email"),
-        company_website: d.get("company_website"),
+        hpx: d.get("hpx"),   /* the spam trap, renamed 13 Nov 2026: autofill filled the old company_website */
         elapsed_ms: Date.now() - loaded
       }).then(function (res) {
         if (res.status === 200 && res.body && res.body.ok) {
