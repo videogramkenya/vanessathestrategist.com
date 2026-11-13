@@ -96,8 +96,10 @@
     }
     function showNext() { next.classList.add("ready"); }
     function onPlay() { report("started"); }
+    var position = 0, lastSentWatched = 0, watchSends = 0;
     function onTime(t, dur) {
       if (dur > 0) duration = dur;
+      position = t;
       if (last !== null) { var d = t - last; if (d > 0 && d <= 2) watched += d; }
       last = t;
       if (!duration) return;
@@ -107,7 +109,29 @@
     function onEnded() {
       if (duration && watched >= 0.8 * duration) report("finished");
       showNext();
+      reportWatch("ended");
     }
+    /* Watch time (13 Nov 2026): the seconds really watched in this visit and where they stopped, sent when the
+       person leaves the page, the tab goes to the background, or the video ends. Only sent when there is at
+       least 2 s of new watching, at most 12 times a visit. Each send becomes a note on their lead. */
+    function reportWatch(why) {
+      if (!sess.lead_id || !sess.sig) return;
+      if (watched - lastSentWatched < 2 || watchSends >= 12) return;
+      watchSends++; lastSentWatched = watched;
+      var secs = Math.round(watched);
+      send({ type: "progress", lead_id: sess.lead_id, sig: sess.sig, event: "watched", seconds: secs, position: Math.round(position), duration: Math.round(duration) }, 10000).catch(function () {});
+      track("webinar_watch_time", { seconds: secs, reason: why });
+    }
+    if (document.addEventListener) document.addEventListener("visibilitychange", function () { if (document.visibilityState === "hidden") reportWatch("hidden"); });
+    if (window.addEventListener) window.addEventListener("pagehide", function () { reportWatch("pagehide"); });
+
+    /* CommerceOS application (13 Nov 2026): sent with the same signed lead reference as the progress notes,
+       so the answers land as a note on this person's own lead. canSend is false when the lead reference
+       was lost (a browser that refuses storage and an address without the reference). */
+    window.WEBINAR_APPLY = {
+      canSend: !!(sess.lead_id && sess.sig),
+      send: function (answers) { return send({ type: "application", lead_id: sess.lead_id, sig: sess.sig, answers: answers }, 15000); }
+    };
 
     if (C.html5Url) {
       var v = document.createElement("video");
